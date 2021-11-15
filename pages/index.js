@@ -1,82 +1,83 @@
-import Head from 'next/head'
+import Head from "next/head";
+import { GlobeIcon, ChevronRightIcon } from "@heroicons/react/solid";
+const navItems = ["technology", "demo", "about us", "contact"];
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen py-2">
+    <div className="">
       <Head>
-        <title>Create Next App</title>
+        <title>Optical Eyewear</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <main className="flex flex-col items-center justify-center w-full flex-1 px-20 text-center">
-        <h1 className="text-6xl font-bold">
-          Welcome to{' '}
-          <a className="text-blue-600" href="https://nextjs.org">
-            Next.js!
-          </a>
-        </h1>
-
-        <p className="mt-3 text-2xl">
-          Get started by editing{' '}
-          <code className="p-3 font-mono text-lg bg-gray-100 rounded-md">
-            pages/index.js
-          </code>
-        </p>
-
-        <div className="flex flex-wrap items-center justify-around max-w-4xl mt-6 sm:w-full">
-          <a
-            href="https://nextjs.org/docs"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Documentation &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Find in-depth information about Next.js features and API.
-            </p>
-          </a>
-
-          <a
-            href="https://nextjs.org/learn"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Learn &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Learn about Next.js in an interactive course with quizzes!
-            </p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Examples &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Discover and deploy boilerplate example Next.js projects.
-            </p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className="p-6 mt-6 text-left border w-96 rounded-xl hover:text-blue-600 focus:text-blue-600"
-          >
-            <h3 className="text-2xl font-bold">Deploy &rarr;</h3>
-            <p className="mt-4 text-xl">
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
+      <main>
+        <div className="pt-5 px-10 bg-gray-300">
+          <header className="flex justify-between">
+            <div className="flex items-center space-x-5">
+              <GlobeIcon className="h-5 text-black" />
+              <h1 className="capitalize font-bold">optical eyewear</h1>
+            </div>
+            <div className="flex items-center space-x-4">
+              <ul className="flex space-x-5">
+                {navItems.map((x, index) => (
+                  <li key={index} className="font-medium capitalize">
+                    {x}
+                  </li>
+                ))}
+              </ul>
+              <button className="capitalize border-2 border-black rounded-full px-5 py-2">
+                get started
+              </button>
+            </div>
+          </header>
+          <section className="flex justify-between pt-20">
+            <div className="space-y-10">
+              <h1 className="text-8xl">
+                A personalized <br />eyewear shopping <br />experience
+              </h1>
+              <p className="text-gray-600 max-w-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <div className="flex items-center space-x-5">
+                <button className="capitalize bg-black text-white rounded-full px-5 py-2">
+                  get started
+                </button>
+                <div className="flex items-center">
+                  <p className="text-xl">See product demo</p>
+                  <ChevronRightIcon className="text-black h-8" />
+                </div>
+              </div>
+            </div>
+            <Image
+              src="/banner-bg.png"
+              width={400}
+              height={600}
+              className="bottom-0"
+            />
+          </section>
         </div>
+          <section className="py-20 px-10 flex justify-around">
+              <h1 className="text-4xl">no more wall <br/> of glasses.</h1>
+              <div className="flex flex-col space-y-5">
+              <p className="text-gray-600  max-w-lg">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat.
+              </p>
+              <div className="flex items-center">
+                  <p className="text-lg font-medium">Take our quiz to find your frames</p>
+                  <ChevronRightIcon className="text-black h-5" />
+                </div>
+              </div>
+          </section>
       </main>
 
-      <footer className="flex items-center justify-center w-full h-24 border-t">
-        <a
-          className="flex items-center justify-center"
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className="h-4 ml-2" />
-        </a>
-      </footer>
+      <footer className=""></footer>
     </div>
-  )
+  );
 }
