@@ -10,7 +10,6 @@ export default function Home() {
         <title>Optical Eyewear</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-
       <main>
         <div className="pt-5 px-10 bg-gray-300">
           <header className="flex justify-between">
@@ -19,21 +18,21 @@ export default function Home() {
               <h1 className="capitalize font-bold">optical eyewear</h1>
             </div>
             <div className="flex items-center space-x-4">
-              <ul className="flex space-x-5">
+              <ul className="hidden md:inline-flex space-x-5">
                 {navItems.map((x, index) => (
                   <li key={index} className="font-medium capitalize">
                     {x}
                   </li>
                 ))}
               </ul>
-              <button className="capitalize border-2 border-black rounded-full px-5 py-2">
+              <button className="hidden xl:inline-flex capitalize border-2 border-black rounded-full px-5 py-2">
                 get started
               </button>
             </div>
           </header>
           <section className="flex justify-between pt-20">
-            <div className="space-y-10">
-              <h1 className="text-8xl">
+            <div className="space-y-10 pb-10">
+              <h1 className="text-6xl xl:text-8xl">
                 A personalized <br />eyewear shopping <br />experience
               </h1>
               <p className="text-gray-600 max-w-lg">
@@ -46,18 +45,19 @@ export default function Home() {
                 <button className="capitalize bg-black text-white rounded-full px-5 py-2">
                   get started
                 </button>
-                <div className="flex items-center">
+                <div className="hidden md:inline-flex items-center">
                   <p className="text-xl">See product demo</p>
                   <ChevronRightIcon className="text-black h-8" />
                 </div>
               </div>
             </div>
-            <Image
-              src="/banner-bg.png"
-              width={400}
-              height={600}
-              className="bottom-0"
-            />
+            <div className="hidden bottom-0 xl:inline-flex">
+              <Image
+                src="/banner-bg.png"
+                width={400}
+                height={300}
+              />
+            </div>
           </section>
         </div>
           <section className="py-20 px-10 flex justify-around">
